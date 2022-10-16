@@ -15,12 +15,9 @@ normal_texture = ExtResource( 6 )
 [node name="HandModel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.5, 1, -0.5 )
 script = ExtResource( 3 )
-path = "/user/hand/right"
 
 [node name="Skeleton" parent="HandModel/Armature" index="0"]
-bones/9/bound_children = [ NodePath("IndexTip") ]
 script = ExtResource( 1 )
-hand = 1
 
 [node name="IndexTip" type="BoneAttachment" parent="HandModel/Armature/Skeleton" index="1"]
 transform = Transform( 0.19221, 0.669966, 0.717078, -0.091543, -0.715277, 0.69282, 0.977075, -0.19881, -0.0761527, -0.0345978, -0.164767, -0.0355401 )
