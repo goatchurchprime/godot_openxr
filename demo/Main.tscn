@@ -135,9 +135,6 @@ mesh = SubResource( 3 )
 
 [node name="LeftHand" parent="FPController" instance=ExtResource( 14 )]
 
-[node name="Skeleton" parent="FPController/LeftHand/HandModel/Armature001" index="0"]
-bones/4/bound_children = [ NodePath("IndexTip") ]
-
 [node name="ShowIndexTip" type="MeshInstance" parent="FPController/LeftHand/HandModel/Armature001/Skeleton/IndexTip" index="0"]
 visible = false
 mesh = SubResource( 4 )
@@ -146,6 +143,9 @@ skeleton = NodePath("../../../../../../RightHand/HandModel/Armature/Skeleton/Ind
 [node name="RightHand" parent="FPController" instance=ExtResource( 15 )]
 motion_range = 1
 albedo_texture = ExtResource( 5 )
+
+[node name="Skeleton" parent="FPController/RightHand/HandModel/Armature" index="0"]
+bones/9/bound_children = [  ]
 
 [node name="vr_glove_right_slim" parent="FPController/RightHand/HandModel/Armature/Skeleton" index="0"]
 script = ExtResource( 25 )

@@ -20,11 +20,9 @@ func set_motion_range(value):
 func _update_motion_range():
 	# for some reason not consistantly named between the two hands..
 	if $HandModel.find_node("Armature001"):
-		print("Seeting motion range from ", $HandModel/Armature001/Skeleton.motion_range)
 		if "motion_range" in $HandModel/Armature001/Skeleton:
 			$HandModel/Armature001/Skeleton.motion_range = motion_range
 	else:
-		print("Seeting motion range fromR ", $HandModel/Armature/Skeleton.motion_range)
 		if "motion_range" in $HandModel/Armature/Skeleton:
 			$HandModel/Armature/Skeleton.motion_range = motion_range
 

@@ -138,7 +138,7 @@ window/vsync/use_vsync=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/goutte.camera.trackball/plugin.cfg" )
 
 [gdnative]
 

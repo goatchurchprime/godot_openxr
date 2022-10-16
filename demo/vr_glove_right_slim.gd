@@ -1,4 +1,5 @@
 extends MeshInstance
 
 func _ready():
-	get_parent().hand = 1
+	if "hand" in get_parent():
+		get_parent().hand = 1

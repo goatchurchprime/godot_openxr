@@ -79,6 +79,17 @@ func set_collide_with_areas(p_new_value : bool):
 	if is_inside_tree():
 		$RayCast.collide_with_areas = collide_with_areas
 
+var isprinting = false
+func print_left_hand_skeleton():
+	if get_parent().name != "LeftHandAim" and not isprinting:
+		var skel = get_node("../../LeftHand/HandModel/Armature001/Skeleton")
+		isprinting = true
+		print("\n lefthand transforms")
+		for i in range(26):
+			print('bp[%d] = str2var("%s")' % [i, var2str(skel.get_bone_pose(i))])
+			yield(get_tree().create_timer(0.1), "timeout")
+		isprinting = false
+		
 func _button_pressed():
 	if $RayCast.is_colliding():
 		target = $RayCast.get_collider()
@@ -88,6 +99,7 @@ func _button_pressed():
 			target.emit_signal("pointer_pressed", last_collided_at)
 		elif target.has_method("pointer_pressed"):
 			target.pointer_pressed(last_collided_at)
+		print_left_hand_skeleton()
 
 func _button_released():
 	if target:
